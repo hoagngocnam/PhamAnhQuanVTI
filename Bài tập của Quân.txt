@@ -1,0 +1,21 @@
+Yêu cầu :
+
+Xây dựng chức website tin tức :
+
+2 bảng : users , posts , comments
+
+Trong bảng users sẽ có role : 9 là admin , 1 là user
+
+Yêu cầu chức năng :
+
+Đăng nhập - đăng ký - đăng xuất - quên mật khẩu - đổi mật khẩu : cho Admin và User
+
+Thêm - sửa - xóa thông tin cho users và posts
+
+Users đã đăng nhập có thể comments vào bài viết
+
+Thực hiện gửi mail khi người dùng đăng ký thành công và quên mật khẩu.
+
+Template Quân có thể dowload trên mạng không cần tự style :
+
+Ví dụ trang admin Quân có thể sử dụng cái này : https://webthemez.com/bluebox-free-bootstrap-admin-template/
