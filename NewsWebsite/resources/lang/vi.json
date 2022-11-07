@@ -1,4 +1,5 @@
 {
+    "email" : "Email",
     "30 Days": "30 Ngày",
     "60 Days": "60 Ngày",
     "90 Days": "90 Ngày",
@@ -406,7 +407,7 @@
     "Panama": "Panama",
     "Papua New Guinea": "Papua New Guinea",
     "Paraguay": "Paraguay",
-    "Password": "Mật khẩu",
+    "password": "Mật khẩu",
     "Pay :amount": "Trả :amount",
     "Payment Cancelled": "Huỷ Bỏ Thành Toán",
     "Payment Confirmation": "Xác Nhận Thành Toán",

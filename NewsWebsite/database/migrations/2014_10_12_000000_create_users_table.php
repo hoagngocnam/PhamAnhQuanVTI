@@ -22,8 +22,8 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->string('first_name');
             $table->string('last_name');
-            $table->date('birthday');
-            $table->text('address');
+            $table->date('birthday')->nullable();
+            $table->text('address')->nullable();
             $table->tinyInteger('sex')->unsigned()->default(0);
             $table->tinyInteger('role')->unsigned()->default(0);
             $table->tinyInteger('status')->unsigned()->default(0);
