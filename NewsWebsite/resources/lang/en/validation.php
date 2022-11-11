@@ -15,7 +15,11 @@ return [
         'email' => 'Email',
         'password' => 'Mật khẩu',
         'first_name' => 'Họ tên',
-        'last_name' => 'Tên'
+        'last_name' => 'Tên',
+        'sex' => 'Giới tính',
+        'role' => 'Vai trò',
+        'avatar' => 'Ảnh đại diện',
+        'name' => 'Tên danh mục'
     ],
     'accepted' => 'The :attribute must be accepted.',
     'active_url' => 'The :attribute is not a valid URL.',
@@ -90,7 +94,7 @@ return [
         'string' => 'Trường này chỉ có nhiều nhất :max ký tự.',
         'array' => 'The :attribute may not have more than :max items.',
     ],
-    'mimes' => 'The :attribute must be a file of type: :values.',
+    'mimes' => ' :attribute phải có định dạng: :values.',
     'mimetypes' => 'The :attribute must be a file of type: :values.',
     'min' => [
         'numeric' => 'The :attribute must be at least :min.',

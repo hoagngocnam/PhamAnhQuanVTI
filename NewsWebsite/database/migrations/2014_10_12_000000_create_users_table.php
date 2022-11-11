@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->date('birthday')->nullable();
             $table->text('address')->nullable();
             $table->tinyInteger('sex')->unsigned()->default(0);
-            $table->tinyInteger('role')->unsigned()->default(0);
+            $table->tinyInteger('role')->unsigned()->default(1);
             $table->tinyInteger('status')->unsigned()->default(0);
         });
     }
