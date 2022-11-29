@@ -1,6 +1,15 @@
 @extends('layouts.app')
-
 @section('content')
+<style>
+.fa-solid fa-eye {
+    float: right;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+}
+</style>
+<script src="https://kit.fontawesome.com/9749499914.js" crossorigin="anonymous"></script>
 <h2 style="text-align: center">Quản trị viên</h2>
 <div class="container">
     <div class="row justify-content-center">
@@ -19,7 +28,6 @@
                                 <input placeholder="Nhập địa chỉ mail" id="email" type="email"
                                     class="form-control @error('email') is-invalid @enderror" name="email"
                                     value="{{ old('email') }}" autocomplete="email">
-
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -29,12 +37,11 @@
                         </div>
 
                         <div class="form-group d-flex mb-1 ">
-
                             <div class="form-group row">
                                 <label for="first_name" class="col-md-3 col-form-label text-md-left"> Họ * </label>
 
                                 <div class="col-md-6" style="margin-left: 91px;">
-                                    <input placeholder="Nhập họ" id="first_name" type="text"
+                                    <input maxlength="50" placeholder="Nhập họ" id="first_name" type="text"
                                         class="form-control @error('first_name') is-invalid @enderror" name="first_name"
                                         value="{{ old('first_name') }}" autocomplete="first_name" autofocus>
 
@@ -50,7 +57,7 @@
                                 <label for="last_name" class="col-md-3 col-form-label text-md-left"> Tên * </label>
 
                                 <div class="col-md-8">
-                                    <input placeholder="Nhập tên" id="last_name" type="text"
+                                    <input maxlength="50" placeholder="Nhập tên" id="last_name" type="text"
                                         class="form-control @error('last_name') is-invalid @enderror" name="last_name"
                                         value="{{ old('last_name') }}" autocomplete="last_name" autofocus>
 
@@ -69,8 +76,9 @@
                             <div class="col-md-8">
                                 <input placeholder="Nhập mật khẩu" id="password" type="password"
                                     class="form-control @error('password') is-invalid @enderror" name="password"
-                                    autocomplete="new-password">
-
+                                    style="position: relative;" autocomplete="new-password">
+                                <i style="position: absolute ; right:50px; top:8px" class="bi bi-eye-slash"
+                                    id="togglePassword"></i>
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -151,4 +159,5 @@
         </div>
     </div>
 </div>
+
 @endsection

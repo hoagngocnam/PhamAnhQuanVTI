@@ -1,11 +1,18 @@
 @extends('layouts.admin')
 @section('content')
 
-<div id="content" class="container-fluid">
+<div id="content" class="container-fluid mt-4">
     <div class="card">
         <div class="card-header font-weight-bold">
             Sửa danh mục
         </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background: none ;">
+                <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{url('/admin/categories/edit')}}">Categories</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Edit</li>
+            </ol>
+        </nav>
         <div class="card-body" style="margin-left: 350px ;">
             <form method="POST" action="{{ route('categories.update',$categories->id) }}">
                 @csrf

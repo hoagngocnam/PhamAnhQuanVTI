@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -16,7 +17,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'address','sex','birthday','email', 'password','avatar'
+        'first_name', 'last_name', 'address','sex','birthday','email', 'password','avatar', 'role'
     ];
 
     /**
@@ -36,4 +37,11 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function Posts(){
+        return $this->hasMany('App\Posts','users_id');
+    }
+    public function Comments(){
+        return $this->hasMany('App\Comments','user_id');
+    }
+
 }

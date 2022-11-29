@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -161,7 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -169,12 +169,13 @@ return [
         /*
          * Application Service Providers...
          */
+        App\Providers\HelperServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
     ],
 
     /*
@@ -194,6 +195,7 @@ return [
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
         'Blade' => Illuminate\Support\Facades\Blade::class,
         'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
         'Bus' => Illuminate\Support\Facades\Bus::class,
@@ -226,6 +228,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        "Breadcrumbs" => DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::class ,
 
     ],
 

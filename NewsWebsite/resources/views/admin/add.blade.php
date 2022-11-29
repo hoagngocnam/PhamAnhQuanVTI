@@ -6,11 +6,18 @@ img {
     max-height: 170px;
 }
 </style>
-<div id="content" class="container-fluid">
+<div id="content" class="container-fluid mt-4">
     <div class="card">
         <div class="card-header font-weight-bold">
             Thêm người dùng
         </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background: none ;">
+                <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{url('/admin/list')}}">Admin</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Add</li>
+            </ol>
+        </nav>
         <div class="card-body" style="margin-left: 350px ;">
             <form method="POST" action="{{ route('admin.store') }}" enctype="multipart/form-data">
                 @csrf
@@ -37,7 +44,7 @@ img {
                         <label for="first_name" class="col-md-2 col-form-label text-md-left"> Họ * </label>
 
                         <div class="col-md-5" style="margin-left: 138px;">
-                            <input placeholder="Nhập họ" id="first_name" type="text"
+                            <input maxlength="50" placeholder="Nhập họ" id="first_name" type="text"
                                 class="form-control @error('first_name') is-invalid @enderror" name="first_name"
                                 value="{{ old('first_name') }}" autocomplete="first_name" autofocus>
 
@@ -49,13 +56,13 @@ img {
                         </div>
                     </div>
 
-                    <div class="form-group row" style="margin-left: -50px;">
+                    <div class="form-group row" style="margin-left: -60px;">
                         <label for="last_name" class="col-md-3 col-form-label text-md-left"> Tên * </label>
 
                         <div class="col-md-6">
-                            <input placeholder="Nhập tên" id="last_name" type="text"
+                            <input maxlength="50" placeholder="Nhập tên" id="last_name" type="text"
                                 class="form-control @error('last_name') is-invalid @enderror" name="last_name"
-                                value="{{ old('last_name') }}" autocomplete="last_name" autofocus>
+                                value="{{ old('last_name') }}" autocomplete="last_name">
 
                             @error('last_name')
                             <span class="invalid-feedback" role="alert">
@@ -72,8 +79,9 @@ img {
                     <div class="col-md-4">
                         <input placeholder="Nhập mật khẩu" id="password" type="password"
                             class="form-control @error('password') is-invalid @enderror" name="password"
-                            autocomplete="new-password">
-
+                            autocomplete="new-password" style="position: relative;">
+                        <i style="position: absolute ; right:50px; top:8px" class="bi bi-eye-slash"
+                            id="togglePassword"></i>
                         @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -146,18 +154,15 @@ img {
                     <div class="col-md-4">
                         <div class="block-text mt-2">
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" value="3" {{ old('role') == 3 ? '' : '' }}
-                                    class="custom-control-input" id="radio-b4" name="role">
+                                <input type="radio" value="3" class="custom-control-input" id="radio-b4" name="role">
                                 <label class="custom-control-label  font-weight-normal" for="radio-b4">Manager</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" value="1" {{ old('role') == 1 ? '' : '' }}
-                                    class="custom-control-input" id="radio-b5" name="role">
+                                <input type="radio" value="1" class="custom-control-input" id="radio-b5" name="role">
                                 <label class="custom-control-label font-weight-normal" for="radio-b5">Admin</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" value="2" {{ old('role') == 2 ? '' : '' }}
-                                    class="custom-control-input" id="radio-b6" name="role">
+                                <input type="radio" value="2" class="custom-control-input" id="radio-b6" name="role">
                                 <label class="custom-control-label font-weight-normal" for="radio-b6">User</label>
                             </div>
                         </div>

@@ -19,7 +19,13 @@ return [
         'sex' => 'Giới tính',
         'role' => 'Vai trò',
         'avatar' => 'Ảnh đại diện',
-        'name' => 'Tên danh mục'
+        'name' => 'Tên danh mục',
+        'title' => 'Tiêu đề',
+        'hot_flag' => 'Trạng thái',
+        'content' => 'Nội dung',
+        'categories_id' => 'Tên danh mục',
+        'post_time' => 'Ngày đăng',
+        'photo' => 'Ảnh'
     ],
     'accepted' => 'The :attribute must be accepted.',
     'active_url' => 'The :attribute is not a valid URL.',
@@ -53,7 +59,7 @@ return [
     'distinct' => 'The :attribute field has a duplicate value.',
     'email' => 'Nhập đúng định dạng email.',
     'ends_with' => 'The :attribute must end with one of the following: :values.',
-    'exists' => 'The selected :attribute is invalid.',
+    'exists' => ':attribute không tồn tại.',
     'file' => 'The :attribute must be a file.',
     'filled' => 'The :attribute field must have a value.',
     'gt' => [
@@ -89,7 +95,7 @@ return [
         'array' => 'The :attribute must not have more than :value items.',
     ],
     'max' => [
-        'numeric' => 'The :attribute may not be greater than :max.',
+        'numeric' => ' :attribute không hợp lệ',
         'file' => 'The :attribute may not be greater than :max kilobytes.',
         'string' => 'Trường này chỉ có nhiều nhất :max ký tự.',
         'array' => 'The :attribute may not have more than :max items.',
@@ -107,7 +113,8 @@ return [
     'numeric' => 'The :attribute must be a number.',
     'password' => 'The password is incorrect.',
     'present' => 'The :attribute field must be present.',
-    'regex' => ':attribute tối thiểu 10 và tối đa 50 ký tự, ít nhất một ký tự hoa, một ký tự thường, một số và một ký tự đặc biệt',
+    'regex_email' => 'Email không đúng định dạng',
+    'regex' => ':attribute không đúng định dạng',
     'required' => ':attribute không được để trống.',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',

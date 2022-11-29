@@ -15,12 +15,14 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail ') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input placeholder="Nhập địa chỉ mail" id="email" type="email"
+                                    class="form-control @error('email') is-invalid @enderror" name="email"
+                                    value="{{ old('email') }}">
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -29,12 +31,16 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">Mật khẩu</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input placeholder="Nhập mật khẩu" id="password" type="password"
+                                    class="form-control @error('password') is-invalid @enderror" name="password"
+                                    style="position: relative;" autocomplete="new-password">
+                                <i style="position: absolute ; right:45px; top:8px" class="bi bi-eye-slash"
+                                    id="togglePassword"></i>
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -45,16 +51,17 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                <a href="{{ route('register') }}" style="color:white; margin-left: 60px ; padding: 6px 18px" class="btn btn-danger">
-                                Đăng ký
+                                <a href="{{ route('register') }}"
+                                    style="color:white; margin-left: 60px ; padding: 6px 18px" class="btn btn-danger">
+                                    Đăng ký
                                 </a>
                             </div>
                         </div>
                         @if (Route::has('password.request'))
-                                    <a style="margin-left: 330px ; color:grey" class="" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
+                        <a style="margin-left: 330px ; color:grey" class="" href="{{ route('password.request') }}">
+                            {{ __('Forgot Your Password?') }}
+                        </a>
+                        @endif
                     </form>
                 </div>
             </div>
