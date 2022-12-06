@@ -1,6 +1,12 @@
+<style>
+.replyform1 {
+    display: none;
+}
+</style>
+
 @foreach($comments as $key => $post_comment)
-<div class="item" @if($post_comment->parent_id != null) style="margin-left:40px;" @endif>
-    <div class="user">
+<div class="item">
+    <div class="user" id="user">
         <figure>
             <img style="margin-top:15px ;" src="{{asset($post_comment->user->avatar)}}">
         </figure>
@@ -16,8 +22,9 @@
             </div>
             @if (Auth::check())
             <footer>
-                <a href="#">Trả lời</a>
-                <form method="post" action="{{ route('comment.store',$post_id) }}">
+                <button onclick='myFunction("{{ $post_comment->id }}")'>Trả lời</button>
+                <form id="replyForm-{{ $post_comment->id }}" class="replyform1" method="post"
+                    action="{{ route('comment.store',$post_id) }}">
                     @csrf
                     <div class="form-group">
                         <input placeholder="Để lại bình luận của bạn ..." style="padding-right: 150px;" type="text"
@@ -25,9 +32,7 @@
                         <input type="hidden" name="{{$post_id}}" value="{{$post_id}}" id="post_id">
                         <input type="hidden" name="parent_id" value="{{ $post_comment->id }}" />
                     </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-warning" value="Trả lời" />
-                    </div>
+                    <button class="btn btn-primary">Trả lời </button>
                     @endif
                 </form>
                 @include('user.commentsDisplay', ['comments' => $post_comment->replies])
@@ -35,9 +40,16 @@
         </div>
     </div>
 </div>
+@endforeach
+<script>
+function myFunction(id) {
+    var element = document.getElementById("replyForm-" + id);
+    element.classList.remove("replyform1");
+}
+</script>
 <script>
 window.addEventListener('load', function(e) {
-    $(`#user`).submit(function(event) {
+    $(`#replyform1`).submit(function(event) {
         event.preventDefault();
         var message = $("#message").val()
         var _token = $('input[name="_token"]').val();
@@ -50,19 +62,17 @@ window.addEventListener('load', function(e) {
                 message: message
             },
             success: function(data, status, xhr) {
-                $("#message").val("");
-                // alert("Thêm bình luận thành công");
-                $('.comment-list').append(
-                    `gooo`
+                $("#comment").val("");
+                alert("Thêm bình luận thành công");
+                $('.details').append(
+                    `123`
                 );
             },
             error: function(xhr, status, error) {
                 console.log(error);
-                alert("something went wrong");
+                alert("Hãy nhập bình luận của bạn !");
             }
         });
     });
 });
 </script>
-
-@endforeach

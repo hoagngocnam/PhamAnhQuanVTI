@@ -25,7 +25,8 @@ return [
         'content' => 'Nội dung',
         'categories_id' => 'Tên danh mục',
         'post_time' => 'Ngày đăng',
-        'photo' => 'Ảnh'
+        'photo' => 'Ảnh',
+        'message' => 'Bình luận'
     ],
     'accepted' => 'The :attribute must be accepted.',
     'active_url' => 'The :attribute is not a valid URL.',
@@ -137,8 +138,8 @@ return [
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
     '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,50}$' => ':attribute tối thiểu 10 và tối đa 50 ký tự, ít nhất một ký tự hoa, một ký tự thường, một số và một ký tự đặc biệt',
-    
-        
+
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -167,6 +168,6 @@ return [
     |
     */
 
-    
+
 
 ];

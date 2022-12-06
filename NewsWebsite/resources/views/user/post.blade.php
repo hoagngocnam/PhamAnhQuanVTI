@@ -171,11 +171,12 @@ window.addEventListener('load', function(e) {
             },
             error: function(xhr, status, error) {
                 console.log(error);
-                alert("something went wrong");
+                alert("Hãy nhập bình luận của bạn !");
             }
         });
     });
 });
 </script>
+
 @endif
 @endsection

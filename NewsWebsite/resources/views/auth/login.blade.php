@@ -44,7 +44,9 @@
                                 @enderror
                             </div>
                         </div>
-
+                        <div class="col-md-6">
+                            <input type="hidden" id="role" value="3" placeholder="3" name="role">
+                        </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4 mb-3 mt-2">
                                 <button style="margin-left: 25px ;" type="submit" class="btn btn-primary">
